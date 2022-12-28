@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthService } from './auth/auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +13,11 @@ import { StatementComponent } from './admin/statement/statement.component';
 import { DetailsComponent } from './investor/details/details.component';
 import { TradesComponent } from './investor/trades/trades.component';
 import { HoldingsComponent } from './investor/holdings/holdings.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdminComponent } from './admin/admin.component';
+import { BackendService } from './backend.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,14 +30,18 @@ import { HoldingsComponent } from './investor/holdings/holdings.component';
     DetailsComponent,
     TradesComponent,
     HoldingsComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, BackendService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
