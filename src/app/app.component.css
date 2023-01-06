@@ -9,7 +9,7 @@ mat-sidenav {
 
 a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 a:hover,
@@ -21,9 +21,9 @@ a:active {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
+    /* display: flex; */
 }
 
-li{
+/* li{
     display: inline;
-}
+} */

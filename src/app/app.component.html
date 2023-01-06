@@ -1,6 +1,16 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
-    <p>Sidenav</p>
+    <div>
+      <a routerLink="/user/home">Home</a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end">
+      <ul fxLayout class="navigation-items">
+        <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li>
+        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li><a routerLink="/broker" routerLinkActive="active">Broker</a></li>
+        <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+      </ul>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
@@ -9,19 +19,12 @@
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-      
-      <div>St. Aloysius Stock Exchange</div>
-      <div><a routerLink="/user/home">Home</a></div>
-      <div fxFlex fxLayout fxLayoutAlign="flex-end">
-        <ul fxLayout class="navigation-items">
-          <li><a routerLink="/signup" routerLinkActive="active" >Signup</a></li>
-          <li><a routerLink="/login" routerLinkActive="active" >Login</a></li>
-        </ul>
-      </div>
+
+      <div>Stock Exchange</div>
     </mat-toolbar>
-    Welcome
+
     <main>
-      <app-admin></app-admin>
+
       <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>

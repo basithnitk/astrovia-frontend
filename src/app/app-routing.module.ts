@@ -4,12 +4,15 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
+import { BrokerComponent } from './broker/broker.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: 'user/home', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  // { path: '/', component: HomeComponent },
+  { path: 'broker', component: BrokerComponent },
+  { path: 'admin', component: AdminComponent },
   // { path: '**', component: PageNotFoundComponent }
 ];
 
