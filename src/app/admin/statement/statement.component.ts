@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
-import { BackendService } from '../../backend.service';
+import { BackendService } from '../../shared/backend.service';
 import { Portfolio } from '../../portfolio.model';
 
 import enIN from "@angular/common/locales/en-IN";

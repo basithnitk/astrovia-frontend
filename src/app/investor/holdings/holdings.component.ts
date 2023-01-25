@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-holdings',
+  selector: 'investor-holdings',
   templateUrl: './holdings.component.html',
   styleUrls: ['./holdings.component.css']
 })
 export class HoldingsComponent implements OnInit {
-
+  @Input() holdings;
   constructor() { }
 
+  displayedColumns= ['stock','quantity'];
   ngOnInit(): void {
+    console.log(this.holdings);
   }
 
 }

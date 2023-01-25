@@ -17,9 +17,10 @@ import { HoldingsComponent } from './investor/holdings/holdings.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminComponent } from './admin/admin.component';
-import { BackendService } from './backend.service';
+import { BackendService } from './shared/backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { InvestorComponent } from './investor/investor.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.componen
     PageNotFoundComponent,
     AdminComponent,
     ConfirmDialogComponent,
+    InvestorComponent,
   ],
   imports: [
     BrowserModule,

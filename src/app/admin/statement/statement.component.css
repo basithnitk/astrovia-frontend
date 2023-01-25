@@ -1,12 +1,6 @@
-table {
-  width: 100%;
-  padding: 10px;
-}
+
 div{
   margin: 1vw;
-}
-.hide{
-  display: none;
 }
 
 mat-footer-row mat-footer-cell{

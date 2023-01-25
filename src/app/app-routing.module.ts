@@ -8,7 +8,7 @@ import { BrokerComponent } from './broker/broker.component';
 import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  { path: 'user/home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'broker', component: BrokerComponent },
