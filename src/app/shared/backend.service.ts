@@ -43,4 +43,8 @@ export class BackendService {
   updateMarketState(s: boolean) {
     return this.http.post(this.marketStateUrl, null, { headers: new HttpHeaders().set("state", s.toString()) });
   }
+
+  setLtp(){
+    return this.http.put(this.setPricesUrl, null);
+  }
 }

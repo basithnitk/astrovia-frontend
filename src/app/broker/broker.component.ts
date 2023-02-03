@@ -49,8 +49,7 @@ export class BrokerComponent implements OnInit {
       .subscribe(res => {
         if (res) {
           this.executeTrade();
-          this.form.reset();
-          this.form.setValue({
+          this.form.reset({
             $key: null,
             from: '',
             to: '',
@@ -59,6 +58,7 @@ export class BrokerComponent implements OnInit {
             ticker: null
           });
         }
+
       });
   }
 

@@ -23,6 +23,6 @@
     </mat-form-field>
     <p>Amount: {{ (form.value.qty * form.value.price) | currency : "INR" : "symbol" : ".0-0" }}</p>
     
-    <button [disabled]="isMarketClosed" mat-raised-button color="accent" (click)="reviewTrade()">Review Trade</button>
+    <button type="button" [disabled]="isMarketClosed" mat-raised-button color="accent" (click)="reviewTrade()">Review Trade</button>
   </form>
 </div>
