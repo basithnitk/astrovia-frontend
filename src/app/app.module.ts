@@ -21,6 +21,7 @@ import { BackendService } from './shared/backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { InvestorComponent } from './investor/investor.component';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { InvestorComponent } from './investor/investor.component';
     AdminComponent,
     ConfirmDialogComponent,
     InvestorComponent,
+    LoginDialogComponent,
   ],
   imports: [
     BrowserModule,

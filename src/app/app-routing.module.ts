@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'investor', component: InvestorComponent },
   // { path: 'signup', component: SignupComponent },
   // { path: 'login', component: LoginComponent },
-  { path: 'broker', component: BrokerComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'broker/c433ad7b83c1fdd', component: BrokerComponent },
+  { path: 'admin/4165433a7a07c5a', component: AdminComponent },
   // { path: '**', component: PageNotFoundComponent }
 ];
 

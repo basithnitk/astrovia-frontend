@@ -1,15 +1,17 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav role="navigation">
-    <div>
-      <a routerLink="/">Home</a>
-      <a routerLink="/investor">Investor</a>
-    </div>
+    
     <div fxFlex fxLayout fxLayoutAlign="flex-end">
       <ul fxLayout class="navigation-items">
         <!-- <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li> -->
         <!-- <li><a routerLink="/login" routerLinkActive="active">Login</a></li> -->
-        <li><a routerLink="/broker" routerLinkActive="active">Broker</a></li>
-        <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+        <li><a (click)="openLoginDialog()">Login</a></li>
+        <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+        <li>
+          <a routerLink="/investor" routerLinkActive="active">Investor</a>
+        </li>
+        <li [hidden]="!(broker||admin)"><a routerLink="/broker/c433ad7b83c1fdd" routerLinkActive="active">Broker</a></li>
+        <li [hidden]="!admin"><a routerLink="/admin/4165433a7a07c5a" routerLinkActive="active">Admin</a></li>
       </ul>
     </div>
   </mat-sidenav>
@@ -25,7 +27,6 @@
     </mat-toolbar>
 
     <main>
-
       <router-outlet></router-outlet>
     </main>
   </mat-sidenav-content>

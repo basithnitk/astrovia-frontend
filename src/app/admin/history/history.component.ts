@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/shared/backend.service';
 
@@ -7,12 +7,17 @@ import { BackendService } from 'src/app/shared/backend.service';
   templateUrl: './history.component.html',
   styleUrls: ['./history.component.css']
 })
-export class HistoryComponent implements OnInit {
+export class HistoryComponent implements OnInit, OnChanges {
   form: FormGroup;
   stocks: any[];
   constructor(private backend: BackendService) { }
 
   ngOnInit(): void {
+    
+  }
+
+  ngOnChanges(): void{
+    this.stocks=[];
     this.backend.getStockList()
       .subscribe(
         res => {
@@ -28,15 +33,16 @@ export class HistoryComponent implements OnInit {
       );
   }
 
-  onSubmit(){
+  onSubmit() {
     var payload: object[] = [];
     const obj = this.form.value;
-    for(var stock in obj)
+    for (var stock in obj)
       payload.push({
         ticker: stock,
         price: obj[stock]
       })
-    
-    this.backend.setStockPrice(payload).subscribe(suc=>console.log("Prices changed successfully!"));
+
+    this.backend.setStockPrice(payload).subscribe(suc => console.log("Prices changed successfully!"));
+    this.form.markAsPristine();
   }
 }

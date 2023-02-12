@@ -25,7 +25,6 @@ export class BrokerComponent implements OnInit {
 
   constructor(
     private backend: BackendService,
-    private dialog: MatDialog,
     private dialogService: DialogService
   ) { }
 
@@ -57,6 +56,7 @@ export class BrokerComponent implements OnInit {
             price: null,
             ticker: null
           });
+          window.location.reload();
         }
 
       });
