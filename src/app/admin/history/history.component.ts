@@ -13,7 +13,7 @@ export class HistoryComponent implements OnInit, OnChanges {
   constructor(private backend: BackendService) { }
 
   ngOnInit(): void {
-    
+    this.ngOnChanges();
   }
 
   ngOnChanges(): void{
@@ -31,6 +31,7 @@ export class HistoryComponent implements OnInit, OnChanges {
           }
         }
       );
+      console.log("object")
   }
 
   onSubmit() {

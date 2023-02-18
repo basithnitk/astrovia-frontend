@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { HomeComponent } from '../home/home.component';
 import { DialogService } from '../shared/dialog.service';
+import { NotificationService } from '../shared/notification.service';
 
 @Component({
   selector: 'app-broker',
@@ -25,7 +26,8 @@ export class BrokerComponent implements OnInit {
 
   constructor(
     private backend: BackendService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private notifService: NotificationService
   ) { }
 
   ngOnInit(): void {
@@ -37,8 +39,8 @@ export class BrokerComponent implements OnInit {
 
   executeTrade() {
     this.backend.execTrade(this.form.value).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err)
+      (res) => {console.log(res);this.notifService.success(res)},
+      (err) => {console.log("::Error: "+ err.error.errorMessage);this.notifService.error(err.error.errorMessage)}
     );
   }
 
@@ -56,7 +58,7 @@ export class BrokerComponent implements OnInit {
             price: null,
             ticker: null
           });
-          window.location.reload();
+          
         }
 
       });

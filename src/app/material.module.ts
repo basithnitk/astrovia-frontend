@@ -11,11 +11,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [MatButtonModule, MatIconModule, MatSidenavModule, MatToolbarModule, MatTableModule, MatInputModule,
-    MatFormFieldModule, MatSelectModule, MatSortModule, MatDialogModule, MatTabsModule, MatSlideToggleModule],
+    MatFormFieldModule, MatSelectModule, MatSortModule, MatDialogModule, MatTabsModule, MatSlideToggleModule,
+    MatSnackBarModule],
   exports: [MatButtonModule, MatIconModule, MatSidenavModule, MatToolbarModule, MatTableModule, MatInputModule,
-    MatFormFieldModule, MatSelectModule, MatSortModule, MatDialogModule, MatTabsModule, MatSlideToggleModule],
+    MatFormFieldModule, MatSelectModule, MatSortModule, MatDialogModule, MatTabsModule, MatSlideToggleModule,
+    MatSnackBarModule],
 })
 export class MaterialModule { }
