@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { HomeComponent } from '../home/home.component';
 import { DialogService } from '../shared/dialog.service';
-import { NotificationService } from '../shared/notification.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-broker',
@@ -14,7 +14,7 @@ import { NotificationService } from '../shared/notification.service';
 export class BrokerComponent implements OnInit {
   stockList;
   isMarketClosed: boolean = false;
-
+  
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
     from: new FormControl('', Validators.required),
@@ -27,7 +27,7 @@ export class BrokerComponent implements OnInit {
   constructor(
     private backend: BackendService,
     private dialogService: DialogService,
-    private notifService: NotificationService
+    private _matSnackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -39,8 +39,11 @@ export class BrokerComponent implements OnInit {
 
   executeTrade() {
     this.backend.execTrade(this.form.value).subscribe(
-      (res) => {console.log(res);this.notifService.success(res)},
-      (err) => {console.log("::Error: "+ err.error.errorMessage);this.notifService.error(err.error.errorMessage)}
+      (res) => {console.log(res);
+      this._matSnackBar.open("::Success: Trade Successful with TXNID: " + res["txnId"],"Dismiss")},
+      (err) => {console.log("::Error: " + err.error.errorMessage);
+      this._matSnackBar.open("::Error: " + err.error.errorMessage,"Dismiss");
+    }
     );
   }
 
