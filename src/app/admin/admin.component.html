@@ -1,5 +1,11 @@
-<mat-slide-toggle [formControl]="state" (change)="toggle()">Market hours</mat-slide-toggle>
-<button mat-flat-button color="warn" (click)="setLtp()">Update Prices to LTP</button>
+<div class="container">
+  <mat-slide-toggle [formControl]="state" (change)="toggle()"
+    >Market hours</mat-slide-toggle
+  >
+  <button mat-flat-button color="warn" (click)="setLtp()">
+    Update Prices to LTP
+  </button>
+</div>
 <mat-tab-group preserveContent animationDuration="0ms">
   <mat-tab label="Set Stock Price">
     <app-history></app-history>
